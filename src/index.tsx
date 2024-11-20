@@ -1,15 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.scss";
+import Test from "./components/randomtest/test";
+import Spell from "./components/Spells/spell";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Spell />} />
+        </Routes>
+        <Test />
+      </Router>
+    </div>
   </React.StrictMode>
 );
 

@@ -1,0 +1,21 @@
+@import "../utils/variables";
+
+* {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+body {
+  margin: 0;
+  background: #141d26;
+}
+.range__indicator {
+  color: $range-color;
+}
+.fire__dmg {
+  color: $fire-dmg;
+}
+.specific {
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+}

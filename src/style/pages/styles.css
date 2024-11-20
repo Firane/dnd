@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #141d26;
+}
+
+.range__indicator {
+  color: #116e5c;
+}
+
+.fire__dmg {
+  color: #c22608;
+}
+
+.specific {
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: underline;
+}/*# sourceMappingURL=styles.css.map */
