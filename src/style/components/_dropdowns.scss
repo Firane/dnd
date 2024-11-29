@@ -1,0 +1,16 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__button {
+    width: 90%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  &__content {
+    display: none;
+  }
+}

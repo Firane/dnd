@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Test from "./components/randomtest/test";
 import Spell from "./components/Spells/spell";
+import Character from "./components/Characters/characters";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -11,9 +11,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <div>
       <Router>
         <Routes>
-          <Route path="/" element={<Spell />} />
+          <Route path="/spell" element={<Spell />} />
+          <Route path="/character" element={<Character />} />
         </Routes>
-        <Test />
       </Router>
     </div>
   </React.StrictMode>

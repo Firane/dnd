@@ -1,0 +1,71 @@
+.item {
+  background: $belto-color;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 9px 0px #000000;
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    background: $characters-background;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    &__icon {
+      max-width: 50px;
+    }
+  }
+  &__stats {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    &__hit,
+    &__dmg,
+    &__type {
+      display: flex;
+      column-gap: 1rem;
+      align-items: center;
+      & > div:nth-child(n + 2) {
+        background: $characters-background;
+        padding: 0.3rem 1rem 0.3rem 1rem;
+        border-radius: 10px;
+      }
+    }
+  }
+  &__description {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    &__header {
+      display: flex;
+      align-items: center;
+      column-gap: 12rem;
+      &__button {
+        background: $belto-color;
+        border-radius: 5px;
+        border: 2px solid black;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        &__icon {
+          background: $belto-color;
+        }
+        &:hover {
+          background: white;
+          & .item__description__header__button__icon {
+            background: white;
+          }
+        }
+      }
+    }
+    &__content {
+      text-align: justify;
+      font-size: 0.85rem;
+    }
+  }
+}

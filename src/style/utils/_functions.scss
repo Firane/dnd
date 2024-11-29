@@ -1,0 +1,9 @@
+@import "../utils/variables";
+
+@function darken-color($color, $lighting) {
+  $hue: hue($color);
+  $sat: 70%;
+  $light: $lighting;
+  $darken: hsl($hue, $sat, $light);
+  @return $darken;
+}
