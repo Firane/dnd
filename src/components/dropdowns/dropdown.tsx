@@ -8,19 +8,32 @@ library.add(faS, faArrowRight);
 export interface MyDropdownProps {
   title: string;
   children?: ReactNode | undefined;
+  this : HTMLElement;
 }
 
-function Dropdown({ title, children }: MyDropdownProps) {
+function Dropdown({ title, children, this}: MyDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [stayClosed, setStayClosed] = useState(true);
-  console.log(title);
-  console.log(isOpen, stayClosed);
 
-  // function opener(): boolean{
-  //   if(isOpen){
-  //     setIsOpen(false);
-  //   }
-  // }
+const state = ( isOpen : boolean) => {
+
+  if(isOpen === true){
+    let inputReactObjet = React.Children.only(this.props.children);
+    let clonedChild = React.cloneElement(inputReactObjet, {
+      className: "displayed"
+    })
+    return clonedChild;
+  }
+  else{
+    let inputReactObjetHidden = React.Children.only(this.props.children);
+    let clonedChildHidden = React.cloneElement(inputReactObjetHidden, {
+      className: "displayed"
+    })
+    return clonedChildHidden;
+  }
+};
+
+state(isOpen);
 
   return (
     <div className="dropdown">
