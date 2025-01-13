@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import characterIllustration from "../../img/characters/BelloBelto.png";
-import Dropdown from "../dropdowns/dropdown";
 import armorIcon from "../../img/characters/armor.webp";
 import Item from "../items/items";
 
@@ -37,9 +36,7 @@ function character(children: props) {
             <Item></Item>
             <Item></Item>
             <Item></Item>
-            <Item>
-              <Dropdown title="Description"></Dropdown>
-            </Item>
+            <Item></Item>
           </div>
         </div>
       </div>

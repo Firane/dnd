@@ -1,0 +1,17 @@
+@keyframes buttonIconRotationEnable {
+  from {
+    transform: rotate(450deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes buttonIconRotationDisable {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}

@@ -40,32 +40,44 @@
   &__description {
     margin-left: 1rem;
     margin-right: 1rem;
-    &__header {
+    &__button {
+      color: white;
+      background: darken-color($belto-color, 50%);
+      border-radius: 10px;
+      border: 2px solid #000000;
       display: flex;
       align-items: center;
-      column-gap: 12rem;
-      &__button {
-        background: $belto-color;
-        border-radius: 5px;
-        border: 2px solid black;
-        height: 30px;
-        width: 30px;
-        display: flex;
-        align-items: center;
-        &__icon {
-          background: $belto-color;
+      justify-content: space-between;
+      width: 90%;
+      height: 50px;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      &__icon {
+        &.disable {
+          animation: buttonIconRotationDisable 0.5s both ease-in-out;
         }
-        &:hover {
-          background: white;
-          & .item__description__header__button__icon {
-            background: white;
-          }
+        &.enable {
+          animation: buttonIconRotationEnable 0.5s both ease-in-out;
         }
+      }
+      &:hover {
+        background: darken-color($belto-color, 30%);
       }
     }
     &__content {
       text-align: justify;
-      font-size: 0.85rem;
+      &.displayed {
+        display: none;
+      }
+      &.hidden {
+        display: block;
+      }
     }
   }
 }
+// &__content {
+//   text-align: justify;
+//   font-size: 1rem;
+//   margin: 1rem;
+// }

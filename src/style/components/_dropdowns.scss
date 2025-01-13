@@ -11,6 +11,11 @@
     margin-bottom: 1rem;
   }
   &__content {
-    display: none;
+    &.hidden {
+      display: none;
+    }
+    &.displayed {
+      display: block;
+    }
   }
 }

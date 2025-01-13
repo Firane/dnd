@@ -34,7 +34,7 @@ function item({ children }: ItemProps) {
           <div className="item__stats__type__value2">Fire</div>
         </div>
       </div>
-      <Dropdown title="Description">
+      <Dropdown title="Description" classname="item__description">
         <p className="item__description__content">
           Permet de lancer les sorts lame de flammes vertes et mot de radiance à
           volonté. Dispose de 12 charges au maximum. Vous devez tenir le bâton
