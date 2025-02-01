@@ -1,4 +1,7 @@
 .item {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
   background: $belto-color;
   width: 350px;
   border-radius: 10px;
@@ -38,46 +41,48 @@
     }
   }
   &__description {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    &__button {
-      color: white;
-      background: darken-color($belto-color, 50%);
-      border-radius: 10px;
-      border: 2px solid #000000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 90%;
-      height: 50px;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      &__icon {
-        &.disable {
-          animation: buttonIconRotationDisable 0.5s both ease-in-out;
+    &__container {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      &__button {
+        margin: 0 auto;
+        color: white;
+        background: darken-color($belto-color, 50%);
+        border-radius: 10px;
+        border: 2px solid #000000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        height: 50px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        &__icon {
+          &.disable {
+            animation: buttonIconRotationDisable 0.5s both ease-in-out;
+          }
+          &.enable {
+            animation: buttonIconRotationEnable 0.5s both ease-in-out;
+          }
         }
-        &.enable {
-          animation: buttonIconRotationEnable 0.5s both ease-in-out;
+        &:hover {
+          background: darken-color($belto-color, 30%);
         }
       }
-      &:hover {
-        background: darken-color($belto-color, 30%);
-      }
-    }
-    &__content {
-      text-align: justify;
-      &.displayed {
-        display: none;
-      }
-      &.hidden {
-        display: block;
+      &__content {
+        height: 0px;
+        overflow: hidden;
+        & > p {
+          margin-top: 1%;
+        }
+        &.hidden > p {
+          animation: dropdownContentFade 2s forwards ease-in-out;
+        }
+        &.displayed > p {
+          animation: dropdownContentShow 2s forwards ease-in-out;
+        }
       }
     }
   }
 }
-// &__content {
-//   text-align: justify;
-//   font-size: 1rem;
-//   margin: 1rem;
-// }

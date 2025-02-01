@@ -39,6 +39,22 @@ body {
     transform: rotate(450deg);
   }
 }
+@keyframes dropdownContentFade {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes dropdownContentShow {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 .spell {
   margin-top: 1rem;
   margin-left: 1rem;
@@ -136,6 +152,7 @@ body {
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
+  padding-bottom: 2rem;
 }
 .character__equipement__content__image > img {
   box-shadow: 3px 3px 9px 0px #000000;
@@ -151,6 +168,8 @@ body {
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
   background: #9d1c03;
   width: 350px;
   border-radius: 10px;
@@ -189,11 +208,12 @@ body {
   padding: 0.3rem 1rem 0.3rem 1rem;
   border-radius: 10px;
 }
-.item__description {
+.item__description__container {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.item__description__button {
+.item__description__container__button {
+  margin: 0 auto;
   color: white;
   background: hsl(9.7402597403, 70%, 50%);
   border-radius: 10px;
@@ -207,41 +227,25 @@ body {
   margin-bottom: 1rem;
   font-weight: bold;
 }
-.item__description__button__icon.disable {
+.item__description__container__button__icon.disable {
   animation: buttonIconRotationDisable 0.5s both ease-in-out;
 }
-.item__description__button__icon.enable {
+.item__description__container__button__icon.enable {
   animation: buttonIconRotationEnable 0.5s both ease-in-out;
 }
-.item__description__button:hover {
+.item__description__container__button:hover {
   background: hsl(9.7402597403, 70%, 30%);
 }
-.item__description__content {
-  text-align: justify;
+.item__description__container__content {
+  height: 0px;
+  overflow: hidden;
 }
-.item__description__content.displayed {
-  display: none;
+.item__description__container__content > p {
+  margin-top: 1%;
 }
-.item__description__content.hidden {
-  display: block;
+.item__description__container__content.hidden > p {
+  animation: dropdownContentFade 2s forwards ease-in-out;
 }
-
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.dropdown__button {
-  width: 90%;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-around;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-.dropdown__content.hidden {
-  display: none;
-}
-.dropdown__content.displayed {
-  display: block;
+.item__description__container__content.displayed > p {
+  animation: dropdownContentShow 2s forwards ease-in-out;
 }/*# sourceMappingURL=App.css.map */
