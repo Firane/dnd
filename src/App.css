@@ -6,7 +6,14 @@
 
 body {
   margin: 0;
-  background: #141d26;
+  min-height: 100vh;
+  background: #5d4157; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #a8caba, #5d4157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
 }
 
 .range__indicator {
@@ -37,22 +44,6 @@ body {
   }
   to {
     transform: rotate(450deg);
-  }
-}
-@keyframes dropdownContentFade {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-@keyframes dropdownContentShow {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
   }
 }
 .spell {
@@ -248,4 +239,84 @@ body {
 }
 .item__description__container__content.displayed > p {
   animation: dropdownContentShow 2s forwards ease-in-out;
+}
+
+.loginscreen__content {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.loginscreen__content__welcome {
+  margin-bottom: 2rem;
+}
+.loginscreen__content__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.loginscreen__content__form__label__text {
+  margin-top: 0.3rem;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 0.95rem;
+  padding: 0.3rem;
+}
+.loginscreen__content__form__label__submit {
+  margin: 0 auto;
+  background: #9fb9ae;
+  border-radius: 10px;
+  border: 2px solid black;
+  height: 50px;
+  width: 50%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.loginscreen__content__form__label__submit:hover {
+  background: hsl(154.6153846154, 70%, 70%);
+}
+
+.worlds__container {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 1rem;
+}
+.worlds__container__instructions {
+  margin-bottom: 2rem;
+}
+.worlds__container__form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.worlds__container__form__label__text {
+  margin-top: 0.3rem;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 0.95rem;
+  padding: 0.3rem;
+}
+.worlds__container__form__label__submit {
+  margin: 0 auto;
+  background: #9fb9ae;
+  border-radius: 10px;
+  border: 2px solid black;
+  height: 50px;
+  width: 50%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+.worlds__container__form__label__submit:hover {
+  background: hsl(154.6153846154, 70%, 70%);
 }/*# sourceMappingURL=App.css.map */

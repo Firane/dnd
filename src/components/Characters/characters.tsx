@@ -2,8 +2,6 @@ import React, { ReactNode } from "react";
 import characterIllustration from "../../img/characters/BelloBelto.png";
 import armorIcon from "../../img/characters/armor.webp";
 import Item, { ItemProps } from "../items/items";
-import { toHaveDescription } from "@testing-library/jest-dom/matchers";
-
 export interface props {
   items: object[];
 }

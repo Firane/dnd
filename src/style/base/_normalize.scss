@@ -6,7 +6,23 @@
 }
 body {
   margin: 0;
-  background: #141d26;
+  min-height: 100vh;
+  background: #5d4157; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #a8caba,
+    #5d4157
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #a8caba,
+    #5d4157
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
 }
 .range__indicator {
   color: $range-color;

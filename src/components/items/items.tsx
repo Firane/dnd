@@ -1,12 +1,6 @@
 import React, { ReactNode } from "react";
 import titleIcon from "../../img/characters/44898.png";
 import Dropdown from "../dropdowns/dropdown";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faS, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-// library.add(faS, faArrowRight);
 
 export interface ItemProps {
   itemData: {
@@ -37,7 +31,6 @@ function item({ itemData }: ItemProps) {
           }),
         ];
       case "string":
-        console.log("string");
         return [
           <div className={`item__stats__` + categorie + `__title`}>
             {categorie}

@@ -1,0 +1,43 @@
+.worlds {
+  &__container {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 1rem;
+    &__instructions {
+      margin-bottom: 2rem;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      &__label {
+        &__text {
+          margin-top: 0.3rem;
+          width: 100%;
+          height: 30px;
+          border-radius: 5px;
+          border: 1px solid black;
+          font-size: 0.95rem;
+          padding: 0.3rem;
+        }
+        &__submit {
+          margin: 0 auto;
+          background: #9fb9ae;
+          border-radius: 10px;
+          border: 2px solid black;
+          height: 50px;
+          width: 50%;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+          &:hover {
+            background: darken-color(#9fb9ae, 70%);
+          }
+        }
+      }
+    }
+  }
+}
