@@ -1,7 +1,6 @@
 .item {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   background: $belto-color;
   width: 350px;
   border-radius: 10px;
@@ -75,6 +74,7 @@
         overflow: hidden;
         & > p {
           margin-top: 1%;
+          text-align: justify;
         }
         &.hidden > p {
           animation: dropdownContentFade 2s forwards ease-in-out;

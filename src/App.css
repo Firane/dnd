@@ -117,11 +117,11 @@ h1 {
   font-size: 0.85rem;
 }
 
-.character {
+.gear {
   color: white;
   background: hsl(9.7402597403, 70%, 15%);
 }
-.character__equipement__header {
+.gear__header {
   background: hsl(9.7402597403, 70%, 25%);
   display: flex;
   align-items: center;
@@ -130,27 +130,27 @@ h1 {
        column-gap: 5rem;
   box-shadow: 3px 3px 9px 0px #000000;
 }
-.character__equipement__header > h3 {
+.gear__header > h2 {
   font-size: 2rem;
   padding: 1rem;
   margin: 0.5rem;
 }
-.character__equipement__header > img {
+.gear__header > img {
   width: 60px;
   height: 60px;
 }
-.character__equipement__content {
+.gear__content {
   display: flex;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
   padding-bottom: 2rem;
 }
-.character__equipement__content__image > img {
+.gear__content__image > img {
   box-shadow: 3px 3px 9px 0px #000000;
   border-radius: 5px;
   margin-left: 1rem;
 }
-.character__equipement__content__items {
+.gear__content__items {
   display: flex;
   flex-wrap: wrap;
   row-gap: 1rem;
@@ -233,6 +233,7 @@ h1 {
 }
 .item__description__container__content > p {
   margin-top: 1%;
+  text-align: justify;
 }
 .item__description__container__content.hidden > p {
   animation: dropdownContentFade 2s forwards ease-in-out;
@@ -319,4 +320,56 @@ h1 {
 }
 .worlds__container__form__label__submit:hover {
   background: hsl(154.6153846154, 70%, 70%);
+}
+
+.inventory {
+  color: white;
+  background: hsl(9.7402597403, 70%, 15%);
+}
+.inventory__header {
+  background: hsl(9.7402597403, 70%, 25%);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  box-shadow: 3px 3px 9px 0px #000000;
+}
+.inventory__header > h2 {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.inventory__header > img {
+  width: 60px;
+  height: 60px;
+}
+.inventory__content {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.inventory__content__coinpurse {
+  height: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 9px 0px #000000;
+  color: black;
+  padding: 4rem;
+  border: 1px solid #7e3c13;
+  border-radius: 50%;
+  background: rgb(126, 60, 19);
+  background: linear-gradient(180deg, rgb(126, 60, 19) 3%, rgb(231, 130, 62) 48%, rgb(231, 130, 62) 54%, rgb(126, 60, 19) 100%);
+}
+.inventory__content__coinpurse__content {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.inventory__content__coinpurse__button {
+  width: 60%;
 }/*# sourceMappingURL=App.css.map */

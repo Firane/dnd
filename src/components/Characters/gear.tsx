@@ -2,11 +2,12 @@ import React, { ReactNode } from "react";
 import characterIllustration from "../../img/characters/BelloBelto.png";
 import armorIcon from "../../img/characters/armor.webp";
 import Item, { ItemProps } from "../items/items";
+
 export interface props {
   items: object[];
 }
 
-function character() {
+function gear() {
   const items = [
     {
       id: 0,
@@ -73,28 +74,26 @@ function character() {
   ];
 
   return (
-    <div className="character">
-      <div className="character__equipement">
-        <div className="character__equipement__header">
-          <h3>Equipement</h3>
-          <img src={armorIcon} alt="armor icon" />
+    <div className="gear">
+      <div className="gear__header">
+        <h2>Gear</h2>
+        <img src={armorIcon} alt="armor icon" />
+      </div>
+      <div className="gear__content">
+        <div className="gear__content__image">
+          <img
+            src={characterIllustration}
+            alt="ADD LATER NAME OF THE CHARACTER"
+          />
         </div>
-        <div className="character__equipement__content">
-          <div className="character__equipement__content__image">
-            <img
-              src={characterIllustration}
-              alt="ADD LATER NAME OF THE CHARACTER"
-            />
-          </div>
-          <div className="character__equipement__content__items">
-            {items?.map((element) => {
-              return <Item key={element.id} itemData={element}></Item>;
-            })}
-          </div>
+        <div className="gear__content__items">
+          {items?.map((element) => {
+            return <Item key={element.id} itemData={element}></Item>;
+          })}
         </div>
       </div>
     </div>
   );
 }
 
-export default character;
+export default gear;

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Spell from "./components/Spells/spell";
-import Character from "./components/Characters/characters";
+import Character from "./pages/character";
 import reportWebVitals from "./reportWebVitals";
 import Loginscreen from "./pages/loginscreen";
 import Worlds from "./pages/worlds";
