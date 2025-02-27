@@ -1,4 +1,5 @@
 @import "../utils/variables";
+@import "../utils/animations";
 
 * {
   box-sizing: border-box;
@@ -34,4 +35,8 @@ h1 {
   font-style: italic;
   font-weight: 600;
   text-decoration: underline;
+}
+
+.warning {
+  animation: warningBlink 5s forwards;
 }

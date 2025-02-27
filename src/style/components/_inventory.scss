@@ -26,15 +26,14 @@
     flex-direction: row;
     column-gap: 1rem;
     &__coinpurse {
-      // height: 100%;
-      // aspect-ratio: 1/1;
+      margin-left: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       box-shadow: 3px 3px 9px 0px #000000;
       color: black;
-      padding: 4rem;
+      padding: 1rem;
       border: 1px solid #7e3c13;
       border-radius: 15px;
       background: rgb(126, 60, 19);
@@ -45,37 +44,142 @@
         rgba(231, 130, 62, 1) 54%,
         rgba(126, 60, 19, 1) 100%
       );
-      &__form {
+      &__list {
+        padding-left: 0;
         display: flex;
         flex-direction: row;
-        column-gap: 0.5rem;
-        &__content {
+        column-gap: 0.2rem;
+        justify-content: space-between;
+        width: 100%;
+        & > li {
+          margin-top: 0.3rem;
+          padding: 0.3rem;
+          border-radius: 5px;
           list-style-type: none;
-          padding: 0;
-          text-align: center;
+          width: 33%;
+          &:nth-child(1) {
+            border: 1px solid black;
+            background: #efbf04;
+            &::marker {
+              color: #efbf04;
+            }
+          }
+          &:nth-child(2) {
+            border: 1px solid black;
+            background: #d0cec6;
+            &::marker {
+              color: #d0cec6;
+            }
+          }
+          &:nth-child(3) {
+            border: 1px solid black;
+            background: #bb6a56;
+            &::marker {
+              color: #bb6a56;
+            }
+          }
         }
-        &__button {
+      }
+      &__instruction {
+        margin: 1rem;
+      }
+      &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+        width: 100%;
+        &__labels {
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
-          padding: 6px 14px;
-          font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
-          border-radius: 6px;
-          border: none;
+          column-gap: 0.2rem;
+          width: 100%;
+          &__goldLabel,
+          &__silverLabel,
+          &__copperLabel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 33%;
+            &__number {
+              border: 2px solid black;
+              // width: 70px;
+              width: 100%;
+              text-align: center;
+            }
+          }
+          &__goldLabel {
+            &__number {
+              background: #efbf04;
+            }
+          }
+          &__silverLabel {
+            &__number {
+              background: #d0cec6;
+            }
+          }
+          &__copperLabel {
+            &__number {
+              background: #bb6a56;
+            }
+          }
+        }
+        &__buttons {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          column-gap: 1rem;
+          &__button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            font: inherit;
+            background-color: #f0f0f0;
+            border: 0;
+            color: #242424;
+            border-radius: 0.5em;
+            font-size: 1rem;
+            padding: 0.375em 1em;
+            font-weight: 600;
+            text-shadow: 0 0.0625em 0 #fff;
+            box-shadow: inset 0 0.0625em 0 0 #f4f4f4, 0 0.0625em 0 0 #efefef,
+              0 0.125em 0 0 #ececec, 0 0.25em 0 0 #e0e0e0,
+              0 0.3125em 0 0 #dedede, 0 0.375em 0 0 #dcdcdc,
+              0 0.425em 0 0 #cacaca, 0 0.425em 0.5em 0 #cecece;
+            transition: 0.25s ease;
+            pointer: cursor;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            cursor: pointer;
 
-          color: #fff;
-          background: linear-gradient(180deg, #4b91f7 0%, #367af6 100%);
-          background-origin: border-box;
-          box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-            inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
-          user-select: none;
-          -webkit-user-select: none;
-          touch-action: manipulation;
-          &:hover {
-            box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
-              0px 0.5px 1.5px rgba(54, 122, 246, 0.25),
-              0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
-            outline: 0;
+            &:active,
+            &:hover {
+              transform: translateY(0.225em);
+              box-shadow: inset 0 0.03em 0 0 #f4f4f4, 0 0.03em 0 0 #efefef,
+                0 0.0625em 0 0 #ececec, 0 0.125em 0 0 #e0e0e0,
+                0 0.125em 0 0 #dedede, 0 0.2em 0 0 #dcdcdc,
+                0 0.225em 0 0 #cacaca, 0 0.225em 0.375em 0 #cecece;
+              &:after {
+                height: calc(100% + 0.225em);
+              }
+            }
+
+            &:after {
+              position: absolute;
+              content: "";
+              display: block;
+              width: 100%;
+              height: calc(100% + 0.375em);
+              top: 0;
+              left: 0;
+              background-color: transparent;
+              transition: height 0.25s ease;
+            }
           }
         }
       }

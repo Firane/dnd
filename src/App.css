@@ -1,4 +1,55 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@keyframes buttonIconRotationEnable {
+  from {
+    transform: rotate(450deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes buttonIconRotationDisable {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+@keyframes warningBlink {
+  0% {
+    border: 2px solid black;
+  }
+  10% {
+    border: 2px solid red;
+  }
+  20% {
+    border: 2px solid black;
+  }
+  30% {
+    border: 2px solid red;
+  }
+  40% {
+    border: 2px solid black;
+  }
+  50% {
+    border: 2px solid red;
+  }
+  60% {
+    border: 2px solid black;
+  }
+  70% {
+    border: 2px solid red;
+  }
+  80% {
+    border: 2px solid black;
+  }
+  90% {
+    border: 2px solid red;
+  }
+  100% {
+    border: 2px solid black;
+  }
+}
 * {
   box-sizing: border-box;
   font-family: "Space Grotesk", sans-serif;
@@ -30,6 +81,10 @@ h1 {
   text-decoration: underline;
 }
 
+.warning {
+  animation: warningBlink 5s forwards;
+}
+
 @keyframes buttonIconRotationEnable {
   from {
     transform: rotate(450deg);
@@ -44,6 +99,41 @@ h1 {
   }
   to {
     transform: rotate(450deg);
+  }
+}
+@keyframes warningBlink {
+  0% {
+    border: 2px solid black;
+  }
+  10% {
+    border: 2px solid red;
+  }
+  20% {
+    border: 2px solid black;
+  }
+  30% {
+    border: 2px solid red;
+  }
+  40% {
+    border: 2px solid black;
+  }
+  50% {
+    border: 2px solid red;
+  }
+  60% {
+    border: 2px solid black;
+  }
+  70% {
+    border: 2px solid red;
+  }
+  80% {
+    border: 2px solid black;
+  }
+  90% {
+    border: 2px solid red;
+  }
+  100% {
+    border: 2px solid black;
   }
 }
 .spell {
@@ -357,11 +447,41 @@ h1 {
   align-items: center;
   box-shadow: 3px 3px 9px 0px #000000;
   color: black;
-  padding: 4rem;
+  padding: 1rem;
   border: 1px solid #7e3c13;
   border-radius: 15px;
   background: rgb(126, 60, 19);
   background: linear-gradient(180deg, rgb(126, 60, 19) 3%, rgb(231, 130, 62) 48%, rgb(231, 130, 62) 54%, rgb(126, 60, 19) 100%);
+}
+.inventory__content__coinpurse__list {
+  padding-left: 0;
+}
+.inventory__content__coinpurse__list > li {
+  margin-top: 0.3rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  list-style-type: none;
+}
+.inventory__content__coinpurse__list > li:nth-child(1) {
+  border: 1px solid black;
+  background: #efbf04;
+}
+.inventory__content__coinpurse__list > li:nth-child(1)::marker {
+  color: #efbf04;
+}
+.inventory__content__coinpurse__list > li:nth-child(2) {
+  border: 1px solid black;
+  background: #d0cec6;
+}
+.inventory__content__coinpurse__list > li:nth-child(2)::marker {
+  color: #d0cec6;
+}
+.inventory__content__coinpurse__list > li:nth-child(3) {
+  border: 1px solid black;
+  background: #bb6a56;
+}
+.inventory__content__coinpurse__list > li:nth-child(3)::marker {
+  color: #bb6a56;
 }
 .inventory__content__coinpurse__form {
   display: flex;
@@ -373,6 +493,9 @@ h1 {
   list-style-type: none;
   padding: 0;
   text-align: center;
+}
+.inventory__content__coinpurse__form__label__number {
+  border: 2px solid black;
 }
 .inventory__content__coinpurse__form__button {
   display: flex;

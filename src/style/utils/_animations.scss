@@ -15,3 +15,39 @@
     transform: rotate(450deg);
   }
 }
+
+@keyframes warningBlink {
+  0% {
+    border: 2px solid black;
+  }
+  10% {
+    border: 2px solid red;
+  }
+  20% {
+    border: 2px solid black;
+  }
+  30% {
+    border: 2px solid red;
+  }
+  40% {
+    border: 2px solid black;
+  }
+  50% {
+    border: 2px solid red;
+  }
+  60% {
+    border: 2px solid black;
+  }
+  70% {
+    border: 2px solid red;
+  }
+  80% {
+    border: 2px solid black;
+  }
+  90% {
+    border: 2px solid red;
+  }
+  100% {
+    border: 2px solid black;
+  }
+}
