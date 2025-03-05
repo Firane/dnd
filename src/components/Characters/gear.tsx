@@ -8,6 +8,8 @@ export interface props {
 }
 
 function gear() {
+  // En attendant d'avoir un backend, je creer mes items...
+  // Waiting for backend...
   const items = [
     {
       id: 0,
@@ -87,9 +89,13 @@ function gear() {
           />
         </div>
         <div className="gear__content__items">
-          {items?.map((element) => {
-            return <Item key={element.id} itemData={element}></Item>;
-          })}
+          {
+            /* Je map a travers chacun de mes items pour les affichers tous.
+            A map through all my items to show them*/
+            items?.map((element) => {
+              return <Item key={element.id} itemData={element}></Item>;
+            })
+          }
         </div>
       </div>
     </div>

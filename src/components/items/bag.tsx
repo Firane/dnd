@@ -25,9 +25,13 @@ function Bag({ bagData }: BagProps) {
   const [inputWarning, setInputWarning] = useState<string | null>(null);
 
   /*
+Ces deux fonctions sont faites pour calculer les pertes ou gain de golds.
+Ca doit incrementer ou decrementer l'or ou l'argent lorsque l'argent ou le bronze atteigne la centaine.
+
 Both of those 2 functions are made to calculate the golds i lose or win
 it need to decrement or increment gold or silver when silver or copper reach the number of >=100
 because you can't have like 434243copper for 2golds
+!!! important, i need to correct the fact that it cant show a value between 0 and -1 golds.
 */
 
   const howManyGoldsIWon = (
@@ -97,6 +101,10 @@ because you can't have like 434243copper for 2golds
   };
 
   const formatHandler = () => {
+    /**
+     * Me permet de faire un retour a l'utilisateur via un message, un effet de bordure, en cas de format incorrect. Que je retire via le settimeout après.
+     * Allow me to send to the user that he send incorrect data. Using text and border effect for that, i also delete this effect later with settimeout.
+     */
     setWarningText(
       <div
         style={{
@@ -118,14 +126,27 @@ because you can't have like 434243copper for 2golds
   };
 
   const changeHandler = (
+    /**
+     * Je cherche a faire un nouveau tableau de valeur a incrementer, representant dans l'ordre : or, argent, bronze.
+     * le parametre number sert, a cible sur quelle monnaie j'interragis. Si je manipule l'or le number correspondra donc a l'indexation de l'or, le 0.
+     * Si j'ai, sur le changement, la ref de sur quelle monnaie je manipule alors je me sert de setIncom pour lui mettre un nouveau de tableau avec les toutes dernieres valeurs changees.
+     * c'est ce tableau la mis a jour a chaque changement qui sera introduit lorsqu'on press l'un des deux boutons prevus pour.
+     * sinon je retourne un tableau qui incrementera de 0.
+     *
+     * The objective here is to create a new array that includes all the value to increment or decrement depending the button the user press, the order : gold, silver, copper
+     * the number parameter is here to be used a reference later to target the type of money i'm interacting with, 0 for gold, 1 for silver, 3 for copper
+     * First i need to be sure that i have my moneyType defined, then i use setIncom to set a new array with new value that replace the previous one.
+     * It's that array that will be pushed when the user use one of the 2 buttons.
+     * else i'm giving an array that will add 0 everywhere. It avoid bad manipulation to reset the entire array or things like that
+     */
     moneyTypeRef: React.MutableRefObject<HTMLInputElement | null>,
     number: number
   ) => {
     if (
       moneyTypeRef &&
-      moneyTypeRef.current &&
-      silverRef.current &&
-      copperRef.current
+      moneyTypeRef.current
+      // && silverRef.current &&
+      // copperRef.current
     ) {
       setIncom((prev) => {
         if (prev) {
@@ -142,6 +163,19 @@ because you can't have like 434243copper for 2golds
   };
 
   const clickHandler = (event: React.MouseEvent) => {
+    /**
+     * Si j'ai, une incom prete et qu'elle correspond au bon format et que le bouton sur lequel l'utilisateur est le plus alors je l'ajoute
+     * Si le bouton est moins, alors je joue la fonction de retrait
+     * sinon c'est que le format n'est pas le bon alors je joue la fonction correspondant au erreur de format
+     * Je remet systematiquement chaque valeur a 0 pour eviter les doubles click ou les manipulations non voulues.
+     * Je remet egalement le tableau d'incom a 0 pour correspondre avec ce que vois l'utilisateur
+     *
+     * If if have a ready incom, that the format is correct, and that my button is a 'plus', then i play functions to add those values to my coinpurse.
+     * If the exact same but my button is the minusm i play every functions to subtract those values to my coinpurse.
+     * Else the form format aint correct and i play the function to warn the user.
+     * i also set every input to 0 to avoid any type of double clicking or unwanted manipulations.
+     * I also set the incom array to 0 to match with what the user sees.
+     */
     if (
       incom &&
       incom.every(Number.isFinite) &&

@@ -9,6 +9,8 @@ export interface props {
 }
 
 function Inventory() {
+  //En attendant le backend...
+  //Waiting for backend...
   const bags = [
     {
       id: 0,
@@ -38,9 +40,13 @@ function Inventory() {
         <img src={inventoryIcon} alt="inventory icon" />
       </div>
       <div className="inventory__content">
-        {bags?.map((element) => {
-          return <Bag key={element.id} bagData={element}></Bag>;
-        })}
+        {
+          // Je map a travers mes differents sacs et porte monnaie pour les afficher
+          // a map through all my bags and coin purse to show them.
+          bags?.map((element) => {
+            return <Bag key={element.id} bagData={element}></Bag>;
+          })
+        }
       </div>
     </div>
   );
